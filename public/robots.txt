@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ailaugh.ing/sitemap-index.xml

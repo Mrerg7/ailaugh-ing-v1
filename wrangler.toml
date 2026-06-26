@@ -1,0 +1,12 @@
+name = "ailaugh-ing-v1"
+compatibility_date = "2026-06-25"
+workers_dev = false
+preview_urls = false
+
+[[routes]]
+pattern = "ailaugh.ing"
+custom_domain = true
+
+[assets]
+directory = "./dist"
+html_handling = "auto-trailing-slash"

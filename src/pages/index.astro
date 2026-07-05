@@ -11,8 +11,9 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
 ---
 
 <Layout title={title} description={description} ogImage={ogImage}>
-  <SEO title={title} description={description} ogImage={ogImage} pathname="/" />
+  <SEO slot="head" title={title} description={description} ogImage={ogImage} pathname="/" />
   <StructuredData
+    slot="head"
     schema={{
       '@context': 'https://schema.org',
       '@graph': [
@@ -20,7 +21,7 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
           '@type': 'WebSite',
           name: 'ailaugh.ing',
           description: description,
-          url: 'https://ailaugh.ing',
+          url: 'https://ailaugh.ing/',
         },
         {
           '@type': 'Product',
@@ -31,7 +32,7 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
             availability: 'https://schema.org/InStock',
             price: '2222',
             priceCurrency: 'USD',
-            url: 'https://ailaugh.ing',
+            url: 'https://ailaugh.ing/',
             businessFunction: 'https://schema.org/Sell',
           },
         },

@@ -1,4 +1,5 @@
 name = "ailaugh-ing-v1"
+main = "src/worker.ts"
 compatibility_date = "2026-06-25"
 workers_dev = false
 preview_urls = false
@@ -7,6 +8,12 @@ preview_urls = false
 pattern = "ailaugh.ing"
 custom_domain = true
 
+[[routes]]
+pattern = "www.ailaugh.ing"
+custom_domain = true
+
 [assets]
 directory = "./dist"
+binding = "ASSETS"
 html_handling = "auto-trailing-slash"
+not_found_handling = "404-page"

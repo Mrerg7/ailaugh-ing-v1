@@ -27,6 +27,12 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
           '@type': 'Product',
           name: 'ailaugh.ing Domain',
           description: 'Premium domain name at the intersection of AI consciousness and humor. A memorable, conversation-starting .ing domain for platforms, communities, and thought leaders exploring the lighter side of machine intelligence.',
+          image: ogImage,
+          brand: {
+            '@type': 'Brand',
+            name: 'DesertRich',
+          },
+          sku: 'AILAUGH-ING-001',
           offers: {
             '@type': 'Offer',
             availability: 'https://schema.org/InStock',
@@ -34,6 +40,40 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
             priceCurrency: 'USD',
             url: 'https://ailaugh.ing/',
             businessFunction: 'https://schema.org/Sell',
+            shippingDetails: {
+              '@type': 'OfferShippingDetails',
+              shippingRate: {
+                '@type': 'MonetaryAmount',
+                value: '0',
+                currency: 'USD',
+              },
+              shippingDestination: {
+                '@type': 'DefinedRegion',
+                addressCountry: 'US',
+              },
+              deliveryTime: {
+                '@type': 'ShippingDeliveryTime',
+                handlingTime: {
+                  '@type': 'QuantitativeValue',
+                  minValue: 0,
+                  maxValue: 1,
+                  unitCode: 'd',
+                },
+                transitTime: {
+                  '@type': 'QuantitativeValue',
+                  minValue: 0,
+                  maxValue: 0,
+                  unitCode: 'd',
+                },
+              },
+            },
+            hasMerchantReturnPolicy: {
+              '@type': 'MerchantReturnPolicy',
+              returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+              merchantReturnDays: 0,
+              returnMethod: 'https://schema.org/ReturnNotPermitted',
+              returnFees: 'https://schema.org/ReturnFeesNotPermitted',
+            },
           },
         },
       ],

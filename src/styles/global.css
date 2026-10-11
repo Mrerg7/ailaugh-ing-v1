@@ -13,6 +13,22 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  button,
+  a {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      scroll-behavior: auto !important;
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
   .font-display {
     font-family: 'Space Grotesk', 'Inter', system-ui, sans-serif;
     font-weight: 600;
@@ -66,6 +82,12 @@
     outline: none;
     border-color: #22f5ff;
     box-shadow: 0 0 0 3px rgba(34, 245, 255, 0.1);
+  }
+
+  .form-input,
+  select,
+  textarea {
+    font-size: 1rem;
   }
 
   .philosophical {

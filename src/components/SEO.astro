@@ -4,15 +4,18 @@ interface Props {
   description: string;
   ogImage?: string;
   pathname: string;
+  keywords?: string;
 }
 
-const { title, description, ogImage, pathname } = Astro.props;
+const { title, description, ogImage, pathname, keywords } = Astro.props;
 const normalizedPath = pathname.endsWith('/') ? pathname : `${pathname}/`;
 const canonicalURL = new URL(normalizedPath, Astro.site);
 ---
 
 <meta name="title" content={title} />
+{keywords && <meta name="keywords" content={keywords} />}
 <meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow, max-image-preview:large" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
@@ -24,8 +27,8 @@ const canonicalURL = new URL(normalizedPath, Astro.site);
 {ogImage && <meta property="og:image:height" content="630" />}
 
 <!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={canonicalURL} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-{ogImage && <meta property="twitter:image" content={ogImage} />}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content={canonicalURL} />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+{ogImage && <meta name="twitter:image" content={ogImage} />}

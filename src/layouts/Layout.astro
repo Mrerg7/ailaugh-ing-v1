@@ -19,6 +19,8 @@ const canonicalURL = new URL(pathname, Astro.site);
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="canonical" href={canonicalURL} />
+    <meta name="theme-color" content="#0a0a0f" />
+    <meta name="color-scheme" content="dark" />
 
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="HT1Nn5uchSz8MHyIEl_IBUmXNtbGi-lAKt0WYDpLfG0" />
@@ -75,7 +77,9 @@ const canonicalURL = new URL(pathname, Astro.site);
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn"
                     class="md:hidden w-10 h-10 flex items-center justify-center text-white/70 hover:text-white transition-colors"
-                    aria-label="Toggle menu">
+                    aria-label="Toggle menu"
+                    aria-controls="mobile-menu"
+                    aria-expanded="false">
               <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
               </svg>
@@ -86,7 +90,7 @@ const canonicalURL = new URL(pathname, Astro.site);
     </nav>
 
     <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-[#0a0a0f] pt-20">
+    <div id="mobile-menu" class="hidden md:hidden fixed inset-0 z-40 bg-[#0a0a0f] pt-20" aria-hidden="true">
       <div class="px-6 py-8 flex flex-col gap-y-6 text-lg font-medium">
         <a href="#question" class="mobile-nav-link py-2">The Question</a>
         <a href="#why" class="mobile-nav-link py-2">Why This Domain</a>
@@ -194,12 +198,16 @@ const canonicalURL = new URL(pathname, Astro.site);
         const isHidden = menu.classList.contains('hidden');
         if (isHidden) {
           menu.classList.remove('hidden');
+          menu.setAttribute('aria-hidden', 'false');
+          btn.setAttribute('aria-expanded', 'true');
           const icon = btn.querySelector('svg');
           if (icon) {
             icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6h12v12" />';
           }
         } else {
           menu.classList.add('hidden');
+          menu.setAttribute('aria-hidden', 'true');
+          btn.setAttribute('aria-expanded', 'false');
           const icon = btn.querySelector('svg');
           if (icon) {
             icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
@@ -218,9 +226,13 @@ const canonicalURL = new URL(pathname, Astro.site);
         document.querySelectorAll('.mobile-nav-link').forEach(link => {
           link.addEventListener('click', () => {
             const menu = document.getElementById('mobile-menu');
-            if (menu) menu.classList.add('hidden');
+            if (menu) {
+              menu.classList.add('hidden');
+              menu.setAttribute('aria-hidden', 'true');
+            }
             const btn = document.getElementById('mobile-menu-btn');
             if (btn) {
+              btn.setAttribute('aria-expanded', 'false');
               const icon = btn.querySelector('svg');
               if (icon) {
                 icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />';
@@ -235,6 +247,9 @@ const canonicalURL = new URL(pathname, Astro.site);
             const menu = document.getElementById('mobile-menu');
             if (menu && !menu.classList.contains('hidden')) {
               menu.classList.add('hidden');
+              menu.setAttribute('aria-hidden', 'true');
+              const btn = document.getElementById('mobile-menu-btn');
+              if (btn) btn.setAttribute('aria-expanded', 'false');
             }
           }
         });

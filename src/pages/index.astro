@@ -5,13 +5,14 @@ import StructuredData from '../components/StructuredData.astro';
 
 const title = 'ailaugh.ing | When Will AI Learn to Laugh? — Premium Domain';
 const description =
-  'ailaugh.ing — When will AI become self-cognizant? Will it make itself laugh? A premier, thought-provoking domain for sale at the intersection of AI, consciousness, and humor.';
+  'Buy ailaugh.ing, a premium .ing domain for sale at $2,222. A memorable domain name for AI products, comedy brands, creative projects, and thought leadership.';
+const keywords = 'buy .ing domains, domain marketplace, ailaugh.ing for sale, premium domain names, AI domains, investment domains, brandable domains';
 const ogImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d44d-4531-3a9d-b6fef0b26800/public';
 const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d44d-4531-3a9d-b6fef0b26800/public';
 ---
 
 <Layout title={title} description={description} ogImage={ogImage}>
-  <SEO slot="head" title={title} description={description} ogImage={ogImage} pathname="/" />
+  <SEO slot="head" title={title} description={description} ogImage={ogImage} pathname="/" keywords={keywords} />
   <StructuredData
     slot="head"
     schema={{
@@ -22,6 +23,13 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
           name: 'ailaugh.ing',
           description: description,
           url: 'https://ailaugh.ing/',
+        },
+        {
+          '@type': 'Organization',
+          name: 'DesertRich',
+          url: 'https://ailaugh.ing/',
+          email: 'sales@desertrich.com',
+          logo: ogImage,
         },
         {
           '@type': 'Product',
@@ -40,40 +48,6 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
             priceCurrency: 'USD',
             url: 'https://ailaugh.ing/',
             businessFunction: 'https://schema.org/Sell',
-            shippingDetails: {
-              '@type': 'OfferShippingDetails',
-              shippingRate: {
-                '@type': 'MonetaryAmount',
-                value: '0',
-                currency: 'USD',
-              },
-              shippingDestination: {
-                '@type': 'DefinedRegion',
-                addressCountry: 'US',
-              },
-              deliveryTime: {
-                '@type': 'ShippingDeliveryTime',
-                handlingTime: {
-                  '@type': 'QuantitativeValue',
-                  minValue: 0,
-                  maxValue: 1,
-                  unitCode: 'd',
-                },
-                transitTime: {
-                  '@type': 'QuantitativeValue',
-                  minValue: 0,
-                  maxValue: 0,
-                  unitCode: 'd',
-                },
-              },
-            },
-            hasMerchantReturnPolicy: {
-              '@type': 'MerchantReturnPolicy',
-              returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
-              merchantReturnDays: 0,
-              returnMethod: 'https://schema.org/ReturnNotPermitted',
-              returnFees: 'https://schema.org/ReturnFeesNotPermitted',
-            },
           },
         },
       ],
@@ -83,7 +57,7 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
   <!-- Hero Section -->
   <header
     class="min-h-[100dvh] flex items-center relative pt-20"
-    style={`background-image: linear-gradient(rgba(10, 10, 15, 0.65), rgba(10, 10, 15, 0.72)), url('${heroBgImage}'); background-size: cover; background-position: center; background-attachment: fixed;`}
+    style={`background-image: linear-gradient(rgba(10, 10, 15, 0.65), rgba(10, 10, 15, 0.72)), url('${heroBgImage}'); background-size: cover; background-position: center;`}
   >
     <div class="max-w-5xl mx-auto px-6 pb-16 pt-12 md:pt-8 text-center relative z-10">
       <!-- Premium Badge -->
@@ -107,6 +81,11 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
         The domain that asks the question<br />
         the rest of the internet is afraid to.
       </p>
+
+      <div class="mb-8" aria-label="Domain price and availability">
+        <p class="text-3xl font-semibold tracking-tight">$2,222 <span class="text-base font-normal text-white/60">USD</span></p>
+        <p class="mt-1 text-sm text-white/60">Available now &middot; Secure escrow transfer</p>
+      </div>
 
       <!-- CTAs -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -337,19 +316,19 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
         <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
           <div>
             <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5" for="name">FULL NAME</label>
-            <input type="text" id="name" required
+            <input type="text" id="name" name="name" autocomplete="name" required
                    class="form-input w-full bg-white/5 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40" />
           </div>
           <div>
             <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5" for="email">EMAIL ADDRESS</label>
-            <input type="email" id="email" required
+            <input type="email" id="email" name="email" autocomplete="email" required
                    class="form-input w-full bg-white/5 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40" />
           </div>
         </div>
 
         <div>
           <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5" for="org">ORGANIZATION OR INTENDED USE (OPTIONAL)</label>
-          <input type="text" id="org"
+          <input type="text" id="org" name="organization"
                  class="form-input w-full bg-white/5 border border-white/15 rounded-2xl px-5 py-3.5 text-white placeholder:text-white/40" />
         </div>
 
@@ -358,13 +337,13 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
             <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5" for="offer">YOUR OFFER (OPTIONAL)</label>
             <div class="relative">
               <span class="absolute left-5 top-1/2 -translate-y-1/2 text-white/40">$</span>
-              <input type="text" id="offer" placeholder="2222"
+              <input type="text" id="offer" name="offer" inputmode="decimal" placeholder="2222"
                      class="form-input w-full bg-white/5 border border-white/15 rounded-2xl pl-8 pr-5 py-3.5 text-white placeholder:text-white/40" />
             </div>
           </div>
           <div>
             <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5" for="timeline">TIMELINE</label>
-            <select id="timeline" class="form-input w-full bg-white/5 border border-white/15 rounded-2xl px-5 py-[15px] text-white">
+            <select id="timeline" name="timeline" class="form-input w-full bg-white/5 border border-white/15 rounded-2xl px-5 py-[15px] text-white">
               <option value="" class="bg-[#1a1a2e]">Select preferred timeline</option>
               <option value="immediate" class="bg-[#1a1a2e]">Immediate (within 7 days)</option>
               <option value="2weeks" class="bg-[#1a1a2e]">Within 2 weeks</option>
@@ -376,7 +355,7 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
 
         <div>
           <label class="block text-xs tracking-widest font-medium text-white/60 mb-1.5" for="message">MESSAGE OR QUESTIONS</label>
-          <textarea id="message" rows="4" placeholder="What&rsquo;s your vision for ailaugh.ing?"
+          <textarea id="message" name="message" rows="4" placeholder="What&rsquo;s your vision for ailaugh.ing?"
                     class="form-input w-full bg-white/5 border border-white/15 rounded-3xl px-5 py-4 text-white placeholder:text-white/40 resize-y min-h-[110px]"></textarea>
         </div>
 
@@ -396,8 +375,8 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 21V3" />
           </svg>
         </div>
-        <h3 class="text-2xl font-semibold tracking-tight mb-2">Inquiry Received</h3>
-        <p class="text-white/70 max-w-xs mx-auto">Thank you. A member of our team will personally respond within 24 hours to discuss next steps.</p>
+        <h3 class="text-2xl font-semibold tracking-tight mb-2">Inquiry Ready</h3>
+        <p class="text-white/70 max-w-xs mx-auto">Your email app should open with the inquiry prepared. Send it to connect with our team about next steps.</p>
         <button type="button" onclick="resetForm()"
                 class="mt-6 text-sm font-medium text-white/60 hover:text-white underline underline-offset-4">Submit another inquiry</button>
       </div>
@@ -457,26 +436,31 @@ const heroBgImage = 'https://imagedelivery.net/-sPAUAWeA405NiWJ0SNIQA/3776b81e-d
 
       const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
       if (!submitBtn) return;
-      const originalText = submitBtn.innerHTML;
-      submitBtn.innerHTML = 'Processing...';
+      submitBtn.innerHTML = 'Opening your email app...';
       submitBtn.disabled = true;
 
-      setTimeout(() => {
-        form.style.display = 'none';
-        if (successMsg) {
-          successMsg.classList.remove('hidden');
-          successMsg.classList.add('block');
-        }
+      const name = (document.getElementById('name') as HTMLInputElement).value;
+      const email = (document.getElementById('email') as HTMLInputElement).value;
+      const org = (document.getElementById('org') as HTMLInputElement).value;
+      const offer = (document.getElementById('offer') as HTMLInputElement).value;
+      const timeline = (document.getElementById('timeline') as HTMLSelectElement).value;
+      const message = (document.getElementById('message') as HTMLTextAreaElement).value;
+      const body = [
+        `Name: ${name}`,
+        `Email: ${email}`,
+        `Organization / intended use: ${org || 'Not provided'}`,
+        `Offer: ${offer ? `$${offer}` : 'Not provided'}`,
+        `Timeline: ${timeline || 'Not provided'}`,
+        '',
+        message || 'No additional message.',
+      ].join('\n');
+      window.location.href = `mailto:sales@desertrich.com?subject=${encodeURIComponent('ailaugh.ing acquisition inquiry')}&body=${encodeURIComponent(body)}`;
 
-        console.log('%c[ailaugh.ing] New inquiry submitted:', 'color:#64748b', {
-          name: (document.getElementById('name') as HTMLInputElement)?.value,
-          email: (document.getElementById('email') as HTMLInputElement)?.value,
-          org: (document.getElementById('org') as HTMLInputElement)?.value,
-          offer: (document.getElementById('offer') as HTMLInputElement)?.value,
-          timeline: (document.getElementById('timeline') as HTMLSelectElement)?.value,
-          message: (document.getElementById('message') as HTMLTextAreaElement)?.value,
-        });
-      }, 850);
+      if (successMsg) {
+        form.style.display = 'none';
+        successMsg.classList.remove('hidden');
+        successMsg.classList.add('block');
+      }
     });
   }
 
